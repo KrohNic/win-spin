@@ -1,6 +1,6 @@
 # Win-spin
 
-Deploy link - [main--fluffy-pony-ea3e36.netlify.app](https://main--fluffy-pony-ea3e36.netlify.app/)
+Deploy link - [krohnic.github.io/win-spin](https://krohnic.github.io/win-spin/)
 
 ## Scripts:
 * To run app in dev mode - ```npm run dev```
