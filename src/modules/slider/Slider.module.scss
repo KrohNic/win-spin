@@ -1,0 +1,72 @@
+.slider {
+  height: 110px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    inset: 0 0 0 0;
+    display: flex;
+    align-items: center;
+    overflow-x: hidden;
+  }
+
+  &__middleBg {
+    flex-grow: 1;
+    background-color: #131829;
+  }
+
+  &__topBg,
+  &__bottomBg {
+    height: 33px;
+    background-repeat: repeat no-repeat, repeat no-repeat;
+  }
+
+  &__topBg {
+    background-image: 
+      url('src/assets/bg/slider-1.svg'), 
+      url('src/assets/bg/slider-2.svg');
+    background-position-y: -2px, -19px;
+    background-color: #131829;
+  }
+  
+  &__bottomBg {
+    background-image: 
+      url('src/assets/bg/slider-3.svg'), 
+      url('src/assets/bg/slider-4.svg');
+    background-position-y: -5px, -27px;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 21px;
+    letter-spacing: 2px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--main-text-color);
+    font-family: 'AA BadaBoom BB', sans-serif;
+  }
+
+  &__highlighted {
+    color: var(--highlighted-color);
+  }
+
+  &__card {
+    flex: 0 0 150px;
+    margin: 0 20px;
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--main-text-color);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    opacity: .6;
+    
+    &_active {
+      opacity: 1;
+    }
+  }
+}

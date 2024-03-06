@@ -1,3 +1,183 @@
-.header {
+.layout {
+  background-color: var(--main-bg-color);
+  min-height: 100dvh;
   display: flex;
+  flex-direction: column;
+
+  &__bg {
+    background-image: url('src/assets/bg/bg.png');
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    flex-grow: 1;
+  }
+
+  &__header {
+    margin: 10px 16px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  &__searchBtn {
+    $size: 35px;
+
+    min-width: $size;
+    height: $size;
+    margin-top: 5px;
+    border-radius: 50%;
+    background-color: var(--search-bnt-bg-color);
+    border: 0;
+    padding: 0;
+    font-size: 0;
+    cursor: pointer;
+    transition-property: transform;
+    transition-duration: .3s;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      transform: scale(.8);
+      transition-duration: .1s;
+    }
+  }
+
+  &__main {
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  &__signin,
+  &__signup {
+    --angle-factor: 1;
+    --position-factor: 0;
+
+    min-width: 131px;
+    height: 45px;
+    margin: 0 4px 8px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    font-family: "Merriweather Sans", sans-serif;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    transition: transform .3s;
+
+    &::before {
+      content: '';
+      border-radius: 4px;
+      z-index: -1;
+      position: absolute;
+      inset: 0 0 0 0;
+      top: calc(-3px * (1 - var(--position-factor)));
+      bottom: calc(-3px * var(--position-factor));
+      transform: perspective(100px) rotateX(calc(15deg * var(--angle-factor)));
+      transition-property: transform, top, bottom;
+      transition-duration: .3s;
+    }
+
+    &:hover {
+      --angle-factor: -1;
+      --position-factor: 1;
+    }
+
+    &:active {
+      transform: scale(.9);
+      transition-duration: .1s;
+    }
+  }
+
+  &__signin{
+    background-color: transparent;
+    color: var(--singin-text-color);
+
+    &::before {
+      background: var(--singin-bg-color);
+    }
+  }
+
+  &__signup {
+    --angle-factor: -1;
+    --position-factor: 1;
+
+    background-color: transparent;
+    color: var(--singup-text-color);
+
+    &::before {
+      background: var(--singup-bg-color);
+      box-shadow: 0 0 15px 0 var(--singup-bg-color);
+    }
+
+    &:hover {
+      --angle-factor: 1;
+      --position-factor: 0;
+    }
+  }
+
+  &__menuBtn {
+    height: 102px;
+    font-size: 0;
+    cursor: pointer;
+    background-color: transparent;
+    background-image: url('src/assets/icons/flame.svg');
+    background-repeat: no-repeat;
+    background-position: top center;
+    border: 0;
+    padding: 0;
+    display: flex;
+    align-items: end;
+    transition: background .3s, transform .3s;
+    z-index: 1;
+    
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0 0 0 0;
+      background-image: url('src/assets/icons/flame.svg');
+      background-repeat: no-repeat;
+      background-position: center 60%;
+      background-size: 50%;
+      filter: brightness(600%) hue-rotate(54deg) saturate(300%);
+      z-index: -1;
+      opacity: 0;
+      transition: background .3s, opacity .2s .1s;
+    }
+
+    &:hover {
+      background-position-y: -10%;
+
+      &::before {
+        background-position-y: -2%;
+        opacity: 1;
+      }
+    }
+
+    &:active {
+      transform: scale(.8);
+      transition-duration: .1s;
+    }
+  }
+
+  &__menuCircle {
+    $size: 60px;
+
+    min-width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 7px solid #E11717;
+    background-image: linear-gradient(180deg, #fff1be 0%, #ffceb1 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
