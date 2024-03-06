@@ -12,7 +12,7 @@
   font-size: 1.6rem;
   font-weight: 500;
   font-family: "Poppins", sans-serif;
-  transition-property: background transform;
+  transition-property: background, transform;
   transition-duration: 0.3s;
 
   &__ico {
