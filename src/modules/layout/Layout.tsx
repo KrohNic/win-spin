@@ -20,7 +20,56 @@ export const Layout = () => {
           </button>
         </header>
 
-        <main className={styles.layout__main}></main>
+        <main className={styles.layout__main}>
+          <div className={styles.layout__page}></div>
+
+          <nav>
+            <ul className={styles.layout__nav}>
+              <a
+                href="/"
+                className={`${styles.layout__navBtn} ${styles.layout__slots}`}
+              >
+                <li>
+                  <img src="src/assets/icons/slots.svg" alt="slots" />
+                  Game slots
+                </li>
+              </a>
+
+              <a
+                href="/"
+                className={`${styles.layout__navBtn} ${styles.layout__casino}`}
+              >
+                <li>
+                  <img src="src/assets/icons/casino.svg" alt="casino" />
+                  Live casino
+                </li>
+              </a>
+
+              <a
+                href="/"
+                className={`${styles.layout__navBtn} ${styles.layout__promotions}`}
+              >
+                <li>
+                  <img src="src/assets/icons/promotions.svg" alt="promotions" />
+                  Promotions
+                </li>
+              </a>
+
+              <a
+                href="/"
+                className={`${styles.layout__navBtn} ${styles.layout__tournaments}`}
+              >
+                <li>
+                  <img
+                    src="src/assets/icons/tournaments.svg"
+                    alt="tournaments"
+                  />
+                  Tournaments
+                </li>
+              </a>
+            </ul>
+          </nav>
+        </main>
       </div>
 
       <Slider />
