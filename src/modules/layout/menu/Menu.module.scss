@@ -1,0 +1,114 @@
+.menu {
+  padding: 0 22px 0 11px;
+
+  &__actions {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  &__signin,
+  &__signup {
+    --angle-factor: 1;
+    --position-factor: 0;
+
+    height: 46px;
+    margin: 0 4px 8px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    font-family: "Merriweather Sans", sans-serif;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    transition: transform 0.3s;
+
+    &::before {
+      content: "";
+      border-radius: 8px;
+      z-index: -1;
+      position: absolute;
+      inset: 0 0 0 0;
+      top: calc(-3px * (1 - var(--position-factor)));
+      bottom: calc(-3px * var(--position-factor));
+      transform: perspective(100px) rotateX(calc(15deg * var(--angle-factor)));
+      transition-property: transform, top, bottom;
+      transition-duration: 0.3s;
+    }
+
+    &:hover {
+      --angle-factor: -1;
+      --position-factor: 1;
+    }
+
+    &:active {
+      transform: scale(0.9);
+      transition-duration: 0.1s;
+    }
+  }
+
+  &__signin {
+    min-width: 117px;
+    background-color: transparent;
+    color: var(--singin-text-color);
+
+    &::before {
+      background: var(--singin-bg-color);
+    }
+  }
+
+  &__signup {
+    --angle-factor: -1;
+    --position-factor: 1;
+
+    min-width: 188px;
+    background-color: transparent;
+    color: var(--singup-text-color);
+
+    &::before {
+      background: var(--singup-bg-color);
+    }
+
+    &:hover {
+      --angle-factor: 1;
+      --position-factor: 0;
+    }
+  }
+
+  &__search {
+    position: relative;
+    margin-top: 14px;
+  }
+
+  &__searchIco {
+    height: 100%;
+    position: absolute;
+    left: 14px;
+    display: flex;
+    align-items: center;
+    color: #fcc211;
+    pointer-events: none;
+  }
+
+  &__searchInput {
+    appearance: none;
+    padding-left: 44px;
+    width: 100%;
+    height: 43px;
+    background-color: #232432;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: "Merriweather Sans", sans-serif;
+    border: 0;
+    border-radius: 8px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-top: 15px;
+  }
+}

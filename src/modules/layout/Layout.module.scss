@@ -1,18 +1,55 @@
 .layout {
   background-color: var(--main-bg-color);
   min-height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: hidden;
   display: flex;
   flex-direction: column;
-  background-image: url('src/assets/bg/bg.png');
+  background-image: url("src/assets/bg/bg.png");
   background-size: 100%;
   background-position: bottom 130px center;
   background-repeat: no-repeat;
 
+  &__menu {
+    $shadow_size: 50px;
+
+    background-color: var(--menu-bg-color);
+    background-image: url('src/assets/bg/menu.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom right;
+    box-shadow: inset 0 #{-3 * $shadow_size} $shadow_size #{-$shadow_size} #121324;
+  }
+
+  &__page {
+    flex-grow: 1;
+    overflow: auto;
+  }
+
   &__header {
     margin: 10px 16px;
     display: flex;
-    gap: 8px;
     align-items: center;
+    justify-content: space-between;
+  }
+  
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  &__statusBar {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+
+  &__locale {
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
   }
 
   &__searchBtn {
@@ -28,15 +65,16 @@
     font-size: 0;
     cursor: pointer;
     transition-property: transform;
-    transition-duration: .3s;
+    transition-duration: 0.3s;
+    color: #fff;
 
     &:hover {
       transform: scale(1.1);
     }
 
     &:active {
-      transform: scale(.8);
-      transition-duration: .1s;
+      transform: scale(0.8);
+      transition-duration: 0.1s;
     }
   }
 
@@ -63,11 +101,11 @@
     cursor: pointer;
     position: relative;
     z-index: 0;
-    transition: transform .3s;
+    transition: transform 0.3s;
 
     &::before {
-      content: '';
-      border-radius: 4px;
+      content: "";
+      border-radius: 7px;
       z-index: -1;
       position: absolute;
       inset: 0 0 0 0;
@@ -75,7 +113,7 @@
       bottom: calc(-3px * var(--position-factor));
       transform: perspective(100px) rotateX(calc(15deg * var(--angle-factor)));
       transition-property: transform, top, bottom;
-      transition-duration: .3s;
+      transition-duration: 0.3s;
     }
 
     &:hover {
@@ -84,12 +122,12 @@
     }
 
     &:active {
-      transform: scale(.9);
-      transition-duration: .1s;
+      transform: scale(0.9);
+      transition-duration: 0.1s;
     }
   }
 
-  &__signin{
+  &__signin {
     background-color: transparent;
     color: var(--singin-text-color);
 
@@ -121,29 +159,29 @@
     font-size: 0;
     cursor: pointer;
     background-color: transparent;
-    background-image: url('src/assets/icons/flame.svg');
+    background-image: url("src/assets/icons/flame.svg");
     background-repeat: no-repeat;
     background-position: top center;
     border: 0;
     padding: 0;
     display: flex;
     align-items: end;
-    transition: background .3s, transform .3s;
+    transition: background 0.3s, transform 0.3s;
     z-index: 0;
     position: relative;
-    
+
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       inset: 0 0 0 0;
-      background-image: url('src/assets/icons/flame.svg');
+      background-image: url("src/assets/icons/flame.svg");
       background-repeat: no-repeat;
       background-position: center 60%;
       background-size: 50%;
       filter: brightness(600%) hue-rotate(54deg) saturate(300%);
       z-index: -1;
       opacity: 0;
-      transition: background .3s, opacity .2s .1s;
+      transition: background 0.3s, opacity 0.2s 0.1s;
     }
 
     &:hover {
@@ -156,8 +194,8 @@
     }
 
     &:active {
-      transform: scale(.8);
-      transition-duration: .1s;
+      transform: scale(0.8);
+      transition-duration: 0.1s;
     }
   }
 
@@ -167,7 +205,7 @@
     min-width: $size;
     height: $size;
     border-radius: 50%;
-    border: 7px solid #E11717;
+    border: 7px solid #e11717;
     background-image: linear-gradient(180deg, #fff1be 0%, #ffceb1 100%);
     display: flex;
     justify-content: center;

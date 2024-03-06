@@ -1,32 +1,62 @@
+import { ReactNode, useState } from "react";
 import logo from "src/assets/logo.svg";
 import SearchIco from "src/assets/icons/lens.svg?react";
 import MenuIco from "src/assets/icons/menu.svg?react";
 
 import styles from "./Layout.module.scss";
-import { MainPage } from "../main-page/MainPage";
+import { Menu } from "./menu/Menu";
 
-export const Layout = () => {
+interface IProps {
+  children: ReactNode;
+}
+
+export const Layout = ({ children }: IProps) => {
+  const [isMenu, setIsMenu] = useState<boolean>(false);
+
+  const toggleMenu = () => setIsMenu((v) => !v);
+
   return (
-    <div className={styles.layout}>
+    <div className={`${styles.layout} ${isMenu ? styles.layout__menu : ""}`}>
       <header className={styles.layout__header}>
-        <a href="/">
-          <img src={logo} alt="logo" />
-        </a>
+        <div className={styles.layout__logo}>
+          <a href="/">
+            <img src={logo} alt="logo" />
+          </a>
 
-        <button type="button" className={styles.layout__searchBtn}>
-          Search
-          <SearchIco />
-        </button>
+          <button type="button" className={styles.layout__searchBtn}>
+            Search
+            <SearchIco />
+          </button>
+        </div>
+
+        {isMenu && (
+          <div className={styles.layout__statusBar}>
+            <a href="/">
+              <img
+                src="src/assets/icons/notifications.svg"
+                alt="notifications"
+              />
+            </a>
+
+            <button type="button" className={styles.layout__locale}>
+              <img src="src/assets/icons/locale.svg" alt="locale" />
+            </button>
+          </div>
+        )}
       </header>
 
-      <MainPage />
+      <div className={styles.layout__page}>{isMenu ? <Menu /> : children}</div>
 
       <footer className={styles.layout__footer}>
         <button type="button" className={styles.layout__signin}>
           Sign in
         </button>
 
-        <button type="button" className={styles.layout__menuBtn}>
+        <button
+          type="button"
+          className={styles.layout__menuBtn}
+          onClick={toggleMenu}
+        >
           Menu
           <div className={styles.layout__menuCircle}>
             <MenuIco />

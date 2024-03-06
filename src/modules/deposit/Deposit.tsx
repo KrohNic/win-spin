@@ -62,7 +62,11 @@ export const Deposit = () => {
         {bonus === null ? (
           <div className={styles.deposit__bonuses}>
             {bonusesIds.map((b) => (
-              <Bonus {...bonuses[b]} onClick={() => onChangeBonus(b)} />
+              <Bonus
+                key={bonuses[b].id}
+                {...bonuses[b]}
+                onClick={() => onChangeBonus(b)}
+              />
             ))}
           </div>
         ) : (

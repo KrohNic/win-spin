@@ -26,7 +26,7 @@ export const Bonus = ({
         {label}
       </div>
 
-      <input type="radio" name="bonus" id={id} checked={checked} />
+      <input type="radio" name="bonus" id={id} defaultChecked={checked} />
 
       {checked ? (
         <div className={styles.bonus__checked}>
