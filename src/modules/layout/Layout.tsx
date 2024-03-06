@@ -4,6 +4,7 @@ import MenuIco from "src/assets/icons/menu.svg?react";
 
 import styles from "./Layout.module.scss";
 import { Slider } from "../slider/Slider";
+import { Deposit } from "../deposit/Deposit";
 
 export const Layout = () => {
   return (
@@ -21,7 +22,9 @@ export const Layout = () => {
         </header>
 
         <main className={styles.layout__main}>
-          <div className={styles.layout__page}></div>
+          <div className={styles.layout__page}>
+            <Deposit />
+          </div>
 
           <nav>
             <ul className={styles.layout__nav}>

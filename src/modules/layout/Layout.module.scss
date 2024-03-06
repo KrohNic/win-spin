@@ -12,7 +12,6 @@
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
   }
 
   &__header {
@@ -50,11 +49,12 @@
   &__main {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    flex-grow: 1;
   }
 
   &__page {
     flex-grow: 1;
+    position: relative;
   }
 
   &__footer {
@@ -79,7 +79,7 @@
     border: 0;
     cursor: pointer;
     position: relative;
-    z-index: 1;
+    z-index: 0;
     transition: transform .3s;
 
     &::before {
@@ -146,9 +146,9 @@
     display: flex;
     align-items: end;
     transition: background .3s, transform .3s;
-    z-index: 1;
-    
+    z-index: 0;
     position: relative;
+    
     &::before {
       content: '';
       position: absolute;
@@ -195,14 +195,14 @@
     margin: 0 16px;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    grid-template-columns: repeat(auto-fit, minmax(160px, calc(50% - 8px)));
     gap: 8px;
     list-style: none;
   }
   
   &__navBtn {
-    height: 20px;
-    padding: 16px;
+    height: 52px;
+    padding-left: 16px;
     display: flex;
     align-items: center;
     text-decoration: none;

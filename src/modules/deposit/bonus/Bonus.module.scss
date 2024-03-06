@@ -1,0 +1,63 @@
+.bonus {
+  width: 310px;
+  height: 96px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding: 0 25px 0 8px;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: "Merriweather Sans", sans-serif;
+  color: #fff;
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  input[type='radio'] {
+    display: none;
+  }
+  
+  .cardRadio {
+    $size: 20px;
+
+    min-width: $size;
+    height: $size;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    opacity: .5;
+    transition: opacity .3s;
+  }
+
+  &:hover .cardRadio {
+    opacity: 1;
+    background-image: url('src/assets/icons/check.svg');
+  }
+
+  &:hover &__checked .arrow {
+    transform: rotateZ(90deg);
+  }
+  
+  &__cardContent {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__checked {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .line {
+      width: 1px;
+      height: 50px;
+      opacity: .5;
+      background-image: linear-gradient(0, transparent 0, #fff 50%, transparent 100%);
+    }
+
+    .arrow {
+      transition: transform .3s;
+    }
+  }
+}
