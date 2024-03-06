@@ -1,5 +1,4 @@
 .bonus {
-  width: 310px;
   height: 96px;
   margin: 0 auto;
   box-sizing: border-box;
@@ -12,6 +11,8 @@
   font-family: "Merriweather Sans", sans-serif;
   color: #fff;
   background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   cursor: pointer;
 
   input[type='radio'] {

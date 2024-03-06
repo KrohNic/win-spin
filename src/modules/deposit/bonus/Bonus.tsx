@@ -1,5 +1,6 @@
 import styles from "./Bonus.module.scss";
 import { IBonus } from "../bonus.types";
+import triangleSrc from "src/assets/icons/triangle.svg";
 
 interface IBonusProps extends IBonus {
   checked?: boolean;
@@ -34,7 +35,7 @@ export const Bonus = ({
 
           <img
             width={12}
-            src="src/assets/icons/triangle.svg"
+            src={triangleSrc}
             alt="select icon"
             className={styles.arrow}
           />

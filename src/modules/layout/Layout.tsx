@@ -2,6 +2,8 @@ import { ReactNode, useState } from "react";
 import logo from "src/assets/logo.svg";
 import SearchIco from "src/assets/icons/lens.svg?react";
 import MenuIco from "src/assets/icons/menu.svg?react";
+import notificationsSrc from "src/assets/icons/notifications.svg";
+import localeSrc from "src/assets/icons/locale.svg";
 
 import styles from "./Layout.module.scss";
 import { Menu } from "./menu/Menu";
@@ -32,14 +34,11 @@ export const Layout = ({ children }: IProps) => {
         {isMenu && (
           <div className={styles.layout__statusBar}>
             <a href="/">
-              <img
-                src="src/assets/icons/notifications.svg"
-                alt="notifications"
-              />
+              <img src={notificationsSrc} alt="notifications" />
             </a>
 
             <button type="button" className={styles.layout__locale}>
-              <img src="src/assets/icons/locale.svg" alt="locale" />
+              <img src={localeSrc} alt="locale" />
             </button>
           </div>
         )}

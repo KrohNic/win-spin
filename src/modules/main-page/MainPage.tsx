@@ -1,5 +1,9 @@
 import { Deposit } from "../deposit/Deposit";
 import { Slider } from "../slider/Slider";
+import slots from "src/assets/icons/slots.svg";
+import casino from "src/assets/icons/casino.svg";
+import promotions from "src/assets/icons/promotions.svg";
+import tournaments from "src/assets/icons/tournaments.svg";
 import styles from "./MainPage.module.scss";
 
 export const MainPage = () => {
@@ -17,7 +21,7 @@ export const MainPage = () => {
               className={`${styles.main__navBtn} ${styles.main__slots}`}
             >
               <li>
-                <img src="src/assets/icons/slots.svg" alt="slots" />
+                <img src={slots} alt="slots" />
                 Game slots
               </li>
             </a>
@@ -27,7 +31,7 @@ export const MainPage = () => {
               className={`${styles.main__navBtn} ${styles.main__casino}`}
             >
               <li>
-                <img src="src/assets/icons/casino.svg" alt="casino" />
+                <img src={casino} alt="casino" />
                 Live casino
               </li>
             </a>
@@ -37,7 +41,7 @@ export const MainPage = () => {
               className={`${styles.main__navBtn} ${styles.main__promotions}`}
             >
               <li>
-                <img src="src/assets/icons/promotions.svg" alt="promotions" />
+                <img src={promotions} alt="promotions" />
                 Promotions
               </li>
             </a>
@@ -47,7 +51,7 @@ export const MainPage = () => {
               className={`${styles.main__navBtn} ${styles.main__tournaments}`}
             >
               <li>
-                <img src="src/assets/icons/tournaments.svg" alt="tournaments" />
+                <img src={tournaments} alt="tournaments" />
                 Tournaments
               </li>
             </a>

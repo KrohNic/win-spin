@@ -1,4 +1,6 @@
 import styles from "./Slider.module.scss";
+import winnersSrc from "src/assets/images/winners.png";
+import sonofegyptSrc from "src/assets/images/sonofegypt.png";
 
 export const Slider = () => {
   return (
@@ -10,7 +12,7 @@ export const Slider = () => {
       <div className={styles.slider__bottomBg} />
 
       <div className={styles.slider__content}>
-        <img src="src/assets/images/winners.png" alt="winners logo" />
+        <img src={winnersSrc} alt="winners logo" />
 
         <h3 className={styles.slider__title}>
           Recent <br />
@@ -23,7 +25,7 @@ export const Slider = () => {
             <span className="highlighted"> Sun of Egypt</span>
           </div>
 
-          <img src="src/assets/images/sonofegypt.png" alt="son of egypt" />
+          <img src={sonofegyptSrc} alt="son of egypt" />
         </div>
 
         <div className={styles.slider__card}>
@@ -32,7 +34,7 @@ export const Slider = () => {
             <span className="highlighted"> Crystal Fruits</span>
           </div>
 
-          <img src="src/assets/images/sonofegypt.png" alt="son of egypt" />
+          <img src={sonofegyptSrc} alt="son of egypt" />
         </div>
       </div>
     </div>

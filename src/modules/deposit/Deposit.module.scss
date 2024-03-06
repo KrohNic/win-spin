@@ -47,10 +47,13 @@
 
     flex: 1 0 100px;
     height: $h;
-    padding: 0 math.div($h, 2);
+    padding: 0 10px;
     border: 2px solid #fff;
     border-radius: $h;
     background-color: #E0E1EA;
+    font-size: 1.2rem;
+    font-weight: 400;
+    font-family: "Merriweather Sans", sans-serif;
     cursor: pointer;
     
     &:focus {
